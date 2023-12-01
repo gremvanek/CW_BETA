@@ -1,7 +1,8 @@
 import json
 import os
 import pathlib
-
+from datetime import datetime, timedelta
+from dateutil.relativedelta import relativedelta
 import pytest
 
 from src.reports import spending_by_category
@@ -12,6 +13,9 @@ USER_SETTINGS_FILE = ROOT_PATH.joinpath("user_settings.json")
 FILE_FOR_JSON = ROOT_PATH.joinpath("data", "report_json.json")
 MY_FUNC_REPORT = ROOT_PATH.joinpath("my_func.json")
 
+test_date = datetime.now().strftime("%d.%m.%Y")
+test_start_date = datetime.now() - relativedelta(months=3)
+
 
 @pytest.mark.parametrize(
     "file_path, category, expected_result",
@@ -21,8 +25,8 @@ MY_FUNC_REPORT = ROOT_PATH.joinpath("my_func.json")
                 "Аптеки",
                 {
                     "category": "Аптеки",
-                    "start_date": "01.09.2023",
-                    "end_date": "01.12.2023",
+                    "start_date": test_start_date.strftime("%d.%m.%Y"),
+                    "end_date": test_date,
                     "total_spending": 19702.0,
                 },
         ),
@@ -45,8 +49,8 @@ def test_report_to_file_decorator():
     # Проверяем, что содержимое файла соответствует ожидаемому результату
     expected_result = {
         "category": "Аптеки",
-        "start_date": "01.09.2023",
-        "end_date": "01.12.2023",
+        "start_date": test_start_date.strftime("%d.%m.%Y"),
+        "end_date": test_date,
         "total_spending": 19702.0,
     }
     assert file_content == expected_result

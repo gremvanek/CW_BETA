@@ -18,7 +18,7 @@ def report_to_file(log_file_path):
         @wraps(func)
         def wrapper(*args, **kwargs):
             result = func(*args, **kwargs)
-            with open(log_file_path, "w", encoding='utf-8') as file:
+            with open(log_file_path, "w", encoding="utf-8") as file:
                 logging.info(f"Result: {result}")
                 json.dump(result, file, ensure_ascii=False)  # Записываем результат в файл
             return result

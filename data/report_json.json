@@ -1,5 +1,5 @@
 {
-    "greeting": "Добрый день",
+    "greeting": "Доброй ночи",
     "cards": [
         {
             "last_digits": "6943",
@@ -18,21 +18,21 @@
     "currency_rates": [
         {
             "currency": "USD",
-            "rate": 88.5819
+            "rate": 89.7619
         },
         {
             "currency": "EUR",
-            "rate": 96.8827
+            "rate": 97.9126
         }
     ],
     "stock_prices": [
         {
             "stock": "AAPL",
-            "price": 189.95
+            "price": 191.27
         },
         {
             "stock": "GOOGL",
-            "price": 132.53
+            "price": 131.73
         }
     ]
 }

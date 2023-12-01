@@ -194,5 +194,5 @@ def generate_report(input_date: str, user_settings_file: Any) -> Any:
 
 
 if __name__ == "__main__":
-    input_date = '2023.05.20'
+    input_date = "2023.05.20"
     pprint(stock_prices_api(input_date, USER_SETTINGS_FILE))

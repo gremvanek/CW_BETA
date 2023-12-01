@@ -4,8 +4,14 @@ import pathlib
 import pandas as pd
 import pytest
 
-from src.views import (card_reader, currency_api, generate_report, hello_function_day_time, stock_prices_api,
-                       top_5_transactions)
+from src.views import (
+    card_reader,
+    currency_api,
+    generate_report,
+    hello_function_day_time,
+    stock_prices_api,
+    top_5_transactions,
+)
 
 ROOT_PATH = pathlib.Path(__file__).parent.parent
 FILE_PATH_XLSX = ROOT_PATH.joinpath("data", "operations.xls")
